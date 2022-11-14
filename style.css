@@ -1,0 +1,100 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+        'graphic graphic graphic graphic graphic  container-filter'
+        'graphic graphic graphic graphic graphic  container-filter'
+        'graphic graphic graphic graphic graphic  container-filter'
+        'graphic graphic graphic graphic graphic  container-filter'
+        'graphic graphic graphic graphic graphic  container-filter'
+        'graphic graphic graphic graphic graphic  container-filter'
+      ;
+
+      margin: 2%;
+}
+
+/* gráfico*/
+#graphic-container{
+  grid-area: graphic;
+}
+
+/* div onde estão os inputs e checkboxs*/
+
+.filter-container{
+  display: flex;
+  flex-direction: column;
+  grid-area: container-filter;
+  
+}
+
+/* container dos inputs */
+.inputs-container{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+/* div container dos checkboxs*/
+.container-checkboxs{
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid;
+  
+}
+/* inputs de menor e maior temperatura*/
+#less_T, #more_T {
+  height: 100%;
+  border-radius: 10px;
+  font-family: sans-serif;
+  text-align: center;
+  width: 50%;
+}
+
+/* div container dos checkboxs*/
+.container-checkboxs{
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+/* checkboxes*/
+.type-termopair{
+  margin-right: 10px;
+  height: 1.2em;
+  width: 1.2em;
+}
+
+/* labels dos checkboxes*/
+label{
+  font-family:sans-serif;
+  font-size: 1em;
+}
+
+/* labels do inputs */
+.container_lesst, .container_moret > label{
+  font-size: sans-serif;
+  font-size: 0.7em;
+}
+
+/*container dos inputs*/
+.container_lesst, .container_moret {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height:40%
+}

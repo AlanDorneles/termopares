@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics of Termopairs</title>
+  <link rel="stylesheet" href="style.css">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="graphic-container">
+      <canvas id="chart">
+
+      </canvas>
+    </div>
+    <div class="filter-container">
+      
+      <div class="inputs-container">
+        <div class="container_lesst">
+          <label for="less_T">LESS TEMPERATURE</label><br>
+          <input type="number" id="less_T" value="0" ></input>
+        </div>
+        <div class="container_moret">
+          <label for="more_T">MORE TEMPERATURE</label><br>
+          <input type="number" id="more_T" value="300"></input>
+        </div>
+        <button onclick="setaValores()">click</button>
+      </div>
+      <div class="container-checkboxs">
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_b" checked onclick="updateChart(this)" value="0">
+          <label for="type_b">TIPO B</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_e" checked onclick="updateChart(this)" value="1">
+          <label for="type_e">TIPO E</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_j" checked onclick="updateChart(this)" value="2">
+          <label for="type_j">TIPO J</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_k" checked onclick="updateChart(this)" value="3">
+          <label for="type_k">TIPO K</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_n" checked onclick="updateChart(this)" value="4">
+          <label for="type_n">TIPO N</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_r" checked onclick="updateChart(this)" value="5">
+          <label for="type_r">TIPO R</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_s" checked onclick="updateChart(this)" value="6">
+          <label for="type_s">TIPO S</label>
+        </div>
+        <div>
+          <input type="checkbox" class="type-termopair" name="type_t" checked onclick="updateChart(this)" value="7">
+          <label for="type_t">TIPO T</label>
+        </div> 
+      </div>   
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="main.js"></script>
+   
+</body>
+</html>
