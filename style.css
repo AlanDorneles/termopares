@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
 }
+/* div do gráfico */
 .container{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -15,81 +16,62 @@
         'graphic graphic graphic graphic graphic  container-filter'
         'graphic graphic graphic graphic graphic  container-filter'
       ;
-
-      margin: 2%;
+  background-image: linear-gradient(to right,#009fff,#ec2f4b);
+  height: 100%;
+  padding: 3%;
 }
 
 /* gráfico*/
 #graphic-container{
   grid-area: graphic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 /* div onde estão os inputs e checkboxs*/
-
 .filter-container{
   display: flex;
   flex-direction: column;
-  grid-area: container-filter;
-  
+  grid-area: container-filter; 
 }
-
-/* container dos inputs */
+/*-----------------INPUTS DE MENOR E MAIOR TEMPERATURA ---------------------*/
+/* container dos inputs de maior e menor temperatura */
 .inputs-container{
   height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-}
-
-/* div container dos checkboxs*/
-.container-checkboxs{
-  display: flex;
-  height: 60%;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid;
-  
+  color: white;
+  font-family: sans-serif;
+  margin-bottom: 1em;
 }
 /* inputs de menor e maior temperatura*/
-#less_T, #more_T {
+input[type="number"]{
   height: 100%;
   border-radius: 10px;
   font-family: sans-serif;
   text-align: center;
   width: 50%;
+  background-color: #2f2f2f63;
+  color: white;
+  font-weight: 700;
+  border: none;
+  
+}
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
 }
 
-/* div container dos checkboxs*/
-.container-checkboxs{
-  display: flex;
-  height: 60%;
-  flex-direction: column;
-  justify-content: space-around;
 
-}
-
-/* checkboxes*/
-.type-termopair{
-  margin-right: 10px;
-  height: 1.2em;
-  width: 1.2em;
-}
-
-/* labels dos checkboxes*/
-label{
-  font-family:sans-serif;
-  font-size: 1em;
-}
 
 /* labels do inputs */
 .container_lesst, .container_moret > label{
   font-size: sans-serif;
   font-size: 0.7em;
 }
-
 /*container dos inputs*/
 .container_lesst, .container_moret {
   display: flex;
@@ -98,3 +80,54 @@ label{
   justify-content: space-around;
   height:40%
 }
+/*----------------------------------INPUTS CHECKBOXS----------------------------*/
+/* div container dos inputs checkboxs*/
+.container-checkboxs{
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  height: 60%;
+  flex-direction: column; 
+}
+/*div que contem a label e os checkboxes*/
+.container-checkboxs div{
+  width: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* checkboxes checados*/
+input[type="checkbox"]:checked {
+  background-color: #009fff;
+  margin-right: 10px;
+  height: 1.4em;
+  width: 1.4em;
+  cursor: pointer;
+}
+
+/* checkboxs não-checados*/
+input[type="checkbox"]{
+  cursor: pointer;
+  margin-right: 10px;
+  height: 1.4em;
+  width: 1.4em;
+   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: white;
+  background-color: #00000063;
+}
+
+/* labels dos checkboxes*/
+.container-checkboxs div label{
+  font-family:sans-serif;
+  font-size: 1em;
+  color: white;
+  width: 4em;
+  margin-bottom: 1px;
+}
+

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graphics of Termopairs</title>
   <link rel="stylesheet" href="style.css">
-   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <div class="container">
@@ -19,14 +21,13 @@
       
       <div class="inputs-container">
         <div class="container_lesst">
-          <label for="less_T">LESS TEMPERATURE</label><br>
-          <input type="number" id="less_T" value="0" ></input>
+          <label for="less_T">TEMPERATURA INICIAL</label><br>
+          <input type="number" id="less_T"></input>
         </div>
         <div class="container_moret">
-          <label for="more_T">MORE TEMPERATURE</label><br>
-          <input type="number" id="more_T" value="300"></input>
+          <label for="more_T">TEMPERATURA FINAL</label><br>
+          <input type="number" id="more_T"></input>
         </div>
-        <button onclick="setaValores()">click</button>
       </div>
       <div class="container-checkboxs">
         <div>

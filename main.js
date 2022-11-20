@@ -1,7 +1,11 @@
-// transformando valores dos inputs em inteiros
+var menor = document.querySelector('#less_T')
+var maior = document.querySelector("#more_T");
+Chart.defaults.color = "#fff";
+const DISPLAY = false;
+var lista = []
+var temperatura;
 
-var menor_temperatura = parseInt(document.getElementById("less_T").value);
-var maior_temperatura = parseInt(document.getElementById("more_T").value);
+// pegando a menor temperatura
 
 
 //Array para o eixo X
@@ -16,8 +20,8 @@ const tipon_array = [];
 const tipor_array = [];
 const tipos_array = [];
 const tipot_array = [];
-//Array de coeficientes dos termopares
 
+//Array de coeficientes dos termopares
 const coefficients_b = [
   0.0*10**0,
   -0.24650818346 * 10 ** -3,
@@ -192,7 +196,7 @@ function calc_tipo_t() {
 
 //iterando da menor temperatura a maior com o passo 0.5 e alocando em uma lista
 
-for (var i = menor_temperatura; i <= maior_temperatura;i += 0.5) {
+for (var i = 0 ; i <= 300;i += 0.5) {
     eixox.push(i);
     calc_tipo_b(i);
     calc_tipo_e(i);
@@ -227,7 +231,7 @@ const data = {
     {
       label: "Tipo B",
       data: termopares[0]["termopares"]["tipob"],
-      backgroundColor: "rgba(244, 208, 111,0.2)",
+      backgroundColor: "rgba(244, 208, 111,1)",
       borderColor: "rgba(244, 208, 111,1)",
       tension: 1,
       parsing: {
@@ -238,7 +242,7 @@ const data = {
     {
       label: "Tipo E",
       data: termopares[0]["termopares"]["tipoe"],
-      backgroundColor: "rgba(252, 119, 83,0.2)",
+      backgroundColor: "rgba(252, 119, 83,1)",
       borderColor: "rgba(252, 119, 83,1)",
       tension: 1,
       parsing: {
@@ -249,7 +253,7 @@ const data = {
     {
       label: "Tipo J",
       data: termopares[0]["termopares"]["tipoj"],
-      backgroundColor: "rgba(102, 215, 209,0.2)",
+      backgroundColor: "rgba(102, 215, 209,1)",
       borderColor: "rgba(102, 215, 209,1)",
       tension: 1,
       parsing: {
@@ -260,7 +264,7 @@ const data = {
     {
       label: "Tipo K",
       data: termopares[0]["termopares"]["tipok"],
-      backgroundColor: "rgba(64, 61, 88,0.2)",
+      backgroundColor: "rgba(64, 61, 88,1)",
       borderColor: "rgba(64, 61, 88,1)",
       tension: 0.1,
       parsing: {
@@ -271,7 +275,7 @@ const data = {
     {
       label: "Tipo N",
       data: termopares[0]["termopares"]["tipon"],
-      backgroundColor: "rgba(219, 213, 110,0.2)",
+      backgroundColor: "rgba(219, 213, 110,1)",
       borderColor: "rgba(219, 213, 110,1)",
       tension: 1,
       parsing: {
@@ -282,7 +286,7 @@ const data = {
     {
       label: "Tipo R",
       data: termopares[0]["termopares"]["tipor"],
-      backgroundColor: "rgba(55, 114, 255,0.2)",
+      backgroundColor: "rgba(55, 114, 255,1)",
       borderColor: "rgba(55, 114, 255,1)",
       tension: 1,
       parsing: {
@@ -293,7 +297,7 @@ const data = {
     {
       label: "Tipo S",
       data: termopares[0]["termopares"]["tipos"],
-      backgroundColor: "rgba(163, 22, 33,0.2)",
+      backgroundColor: "rgba(163, 22, 33,1)",
       borderColor: "rgba(163, 22, 33,1)",
       tension:1,
       parsing: {
@@ -304,7 +308,7 @@ const data = {
     {
       label: "Tipo T",
       data: termopares[0]["termopares"]["tipot"],
-      backgroundColor: "rgba(255,26,104,0.2)",
+      backgroundColor: "rgba(255,26,104,1)",
       borderColor: "rgba(255,26,104,1)",
       tension: 1,
       parsing: {
@@ -319,6 +323,42 @@ const config = {
   data,
   options: {
     responsive: true,
+    scales: {
+      x: {
+        display: true,
+        grid:{
+          beginAtZero:true,
+          display:false
+        },
+        title: {
+          display: true,
+          text: ' Temperatura',
+          font: {
+            family: 'Roboto, sans-serif',
+            size: 20,
+            weight: 'bold',
+            lineHeight: 1.2,
+          },
+        },
+      },
+      y:{
+        display: true,
+        grid:{
+          beginAtZero: true,
+          display:false
+        },
+        title: {
+          display: true,
+          text: ' Milivolts(Mv)',
+          font: {
+            family: 'Roboto, sans-serif',
+            size: 20,
+            weight: 'bold',
+            lineHeight: 1.2,
+          },
+        },
+      }
+    },
   },
 };
 
@@ -337,6 +377,7 @@ function updateChart(data){
     myChart.hide(data.value);
   }
 }
+
 
 /*function setaValores() {
   for (var i = 0; i < data.datasets.length; i++) {
